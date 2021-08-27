@@ -18,10 +18,10 @@ app.set('view engine', 'ejs');
 app.set('views', './app/views')
 
 /* configurar o middleware express.static */
-app.use(express.static('.app/public'));
+app.use(express.static('./app/public'));
 
 /*configurar o middleware body-parser */
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended:true}));
 
 /*configurar middleware express-validator*/
 app.use(expressValidator());
@@ -32,6 +32,7 @@ consign()
     .then('app/controllers')
     .into(app);
 /*exportar o objeto app*/
+
 module.exports = app;
 
 
